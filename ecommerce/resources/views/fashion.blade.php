@@ -14,7 +14,15 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|PT+Serif&display=swap" rel="stylesheet">
     
 </head>
-<body>     
+<body>
+ 
+  <!-- Logo -->
+       <!--   <div class="flex-shrink-0 flex items-center">
+                    <a href="/">
+                        <x-jet-application-mark class="block h-9 w-auto" />
+                    </a>
+                </div>   --> 
+                
 @section('content')
         <div class="box1">
         <ul>
@@ -25,6 +33,7 @@
         
             <h5> Free shipping on all Egy orders over 1000EGP</h5>
         </div>
+         
         <!-- start novbar-->
         <div class="subbox">
             
@@ -87,6 +96,7 @@
              copyRights &copy; EgyptHut
     </footer>
   <!--end footer-->
-  @endsection          
+  @endsection      
+      
 </body>
 </html>
