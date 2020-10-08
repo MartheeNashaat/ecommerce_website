@@ -23,8 +23,13 @@ Route::get('/homepage/{product}', [productcontroller::class, 'show'])->name('pro
 Route::get('/search',[SearchController::class, 'search'])->name('searchy');
 Route::get('/{brand}', [productcontroller::class, 'showbrand'])->name('product.brand');
 Route::get('shop/category/{category_id}', [productcontroller::class, 'getfilter'])->name('product.getfilter');
-
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::get('/add-to-cart/{product}', 'App\Http\Controllers\CartController@add')->name('cart.add')->middleware('auth');
+Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index')->middleware('auth');
+Route::get('/cart/destroy/{itemId}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy')->middleware('auth');
+Route::get('/cart/update/{itemId}', 'App\Http\Controllers\CartController@update')->name('cart.update')->middleware('auth');
+Route::get('/cart/checkout', 'App\Http\Controllers\CartController@checkout')->name('cart.checkout')->middleware('auth');
+//Route::resource('/orders',  'App\Http\Controllers\OrderController')->name('orders.store');
+Route::get('/done', 'App\Http\Controllers\CartController@done')->name('cart.done');
