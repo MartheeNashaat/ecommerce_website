@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\productcontroller;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +27,10 @@ Route::get('shop/category/{category_id}', [productcontroller::class, 'getfilter'
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-Route::get('/add-to-cart/{product}', 'App\Http\Controllers\CartController@add')->name('cart.add')->middleware('auth');
-Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index')->middleware('auth');
-Route::get('/cart/destroy/{itemId}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy')->middleware('auth');
-Route::get('/cart/update/{itemId}', 'App\Http\Controllers\CartController@update')->name('cart.update')->middleware('auth');
-Route::get('/cart/checkout', 'App\Http\Controllers\CartController@checkout')->name('cart.checkout')->middleware('auth');
+Route::get('/add-to-cart/{product}', [CartController::class, 'add'])->name('cart.add')->middleware('auth');
+Route::get('/cart',[CartController::class, 'index'] )->name('cart.index')->middleware('auth');
+//Route::get('/cart/destroy/{itemId}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy')->middleware('auth');
+//Route::get('/cart/update/{itemId}', 'App\Http\Controllers\CartController@update')->name('cart.update')->middleware('auth');
+//Route::get('/cart/checkout', 'App\Http\Controllers\CartController@checkout')->name('cart.checkout')->middleware('auth');
 //Route::resource('/orders',  'App\Http\Controllers\OrderController')->name('orders.store');
-Route::get('/done', 'App\Http\Controllers\CartController@done')->name('cart.done');
+//Route::get('/done', 'App\Http\Controllers\CartController@done')->name('cart.done');
