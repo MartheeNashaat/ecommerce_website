@@ -5,7 +5,8 @@
 
 <h3>Shipping Information</h3>
 
-<form >
+<form action="{{route('orders.store')}}" method="post">
+    @csrf
 
 
 
@@ -16,12 +17,13 @@
         <input type="text" name="shipping_fullname" id="" class="form-control">
     </div>
 
-    
+    <br/>
 
     <div class="form-group">
         <label for="">City</label>
         <input type="text" name="shipping_city" id="" class="form-control">
     </div>
+    <br/>
 
 
 
@@ -29,13 +31,16 @@
         <label for="">Full Address</label>
         <input type="text" name="shipping_address" id="" class="form-control">
     </div>
+    <br/>
 
     <div class="form-group">
         <label for="">Mobile</label>
         <input type="text" name="shipping_phone" id="" class="form-control">
     </div>
+    
+<br/>
 
-    <h4>Payment option</h4>
+    <h3>Payment option</h3>
 
     <div class="form-check">
         <label class="form-check-label">
@@ -57,8 +62,8 @@
 
 <div>
    
-    
-    <a  class="btn btn-primary" href="{{route ('cart.done')}}" role="button">Place Order</a>
+    <br/>
+    <button type="submit" class="btn btn-primary">Place Order</button>
 
 
 

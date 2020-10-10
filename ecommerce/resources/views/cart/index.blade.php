@@ -1,3 +1,5 @@
+
+<h2>Your Cart</h2>
 <table class="table">
     
     <thead>
@@ -38,4 +40,9 @@ Total Price:LE {{\Cart::session(auth()->id())->getTotal()}}
 
 </h3>
 <a  class="btn btn-primary" href="{{route ('cart.checkout')}}" role="button">Proceed to Checkout</a>
+<div>
+        <br />
+<a  class="btn btn-primary" href="{{route ('product.index')}}" role="button">Back to Shop</a>
+</div>
+
 

@@ -24,8 +24,8 @@ Route::get('/cart',[CartController::class, 'index'] )->name('cart.index')->middl
 Route::get('/cart/destroy/{itemId}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy')->middleware('auth');
 Route::get('/cart/update/{itemId}', 'App\Http\Controllers\CartController@update')->name('cart.update')->middleware('auth');
 Route::get('/cart/checkout', 'App\Http\Controllers\CartController@checkout')->name('cart.checkout')->middleware('auth');
-//Route::resource('/orders',  'App\Http\Controllers\OrderController')->name('orders.store');
-Route::get('/done', 'App\Http\Controllers\CartController@done')->name('cart.done');
+Route::resource('orders', 'App\Http\Controllers\OrderController')->middleware('auth');
+Route::get('/done', 'App\Http\Controllers\CartController@done')->name('done');
 Route::get('/shop', [productcontroller::class, 'index'])->name('product.index');
 Route::get('/homepage/{product}', [productcontroller::class, 'show'])->name('product.show');
 Route::get('/search',[SearchController::class, 'search'])->name('searchy');

@@ -61,31 +61,15 @@
             </ol>
         <!--end novbar-->
            <nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+  
 </nav>
             
             
           
         </div>
-        <p>{{$product->brand->name}} </p>
+        
 
-<div> 
-<div>
-@foreach($product->images as $productimage)
-<img src={{asset("images/$productimage->image")}} width="400" height="400" alt="product"/>
-@endforeach
-</div>
-<div>
-<h1>{{$product->name}}</h1>
 
-<div>{{$product->price}}</div>
- <div>sale {{$product->sale_price}}</div>
-<p>description:{{$product->description}} </p> 
-<p>color:{{$product->color}} </p> 
-<p>size:{{$product->size}} </p> 
-<a href="{{route('cart.add',$product)}}">Add to Cart</a>
-</div>
-</div>
+
+
+
