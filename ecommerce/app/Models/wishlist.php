@@ -15,14 +15,15 @@ class wishlist extends Model
         'product_id','User_id'
     ];
 
-    public function product(){
-
-        return $this->hasMany(product::class);
-    }
-    public function User(){ 
-
+    public function user(){
         return $this->belongsTo(User::class);
-
-    }
+     }
+     
+     public function product(){
+        return $this->belongsTo(product::class);
+     }
+     public function wishlist(){
+        return $this->hasMany(wishlist::class);
+     }
 
 }

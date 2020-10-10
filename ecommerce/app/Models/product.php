@@ -33,7 +33,7 @@ class product extends Model
     }
 
     public function wishlist(){
-        return $this->belongsTo(wishlist::class);
-    }
+        return $this->hasMany(wishlist::class);
+     }
 
 }

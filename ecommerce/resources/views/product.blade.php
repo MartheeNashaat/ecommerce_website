@@ -41,6 +41,8 @@
         <ol>
         <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('product.index')}}">Shop</a></li>
+            <li><a href="{{route('wishlist')}}">wishlist</a></li>
+
             <li>
             @if (Route::has('login'))
                 <div>
@@ -84,6 +86,7 @@
 <p>description:{{$product->description}} </p> 
 <p>color:{{$product->color}} </p> 
 <p>size:{{$product->size}} </p> 
+<a href="{{route('wishlist.add',$product->id)}}">add to wishlist</a>
 <a href="{{route('cart.add',$product)}}">Add to Cart</a>
 </div>
 </div>
