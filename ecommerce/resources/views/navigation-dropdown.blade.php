@@ -1,6 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -11,14 +12,15 @@
                 </div>
 
                 <!-- Navigation Links -->
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                        {{ __('Profile') }}
+                    <x-jet-nav-link  style="font-size:150%; font-weight:bold;" href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                        {{ __('My Profile') }}
                     </x-jet-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('orders') }}" :active="request()->routeIs('orders')">
-                        {{ __('Your Orders') }}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" >
+                    <x-jet-nav-link style="font-size:150%; font-weight:bold;" href="{{ route('orders') }}" :active="request()->routeIs('orders')">
+                        {{ __('My Orders') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -29,7 +31,7 @@
                     <x-slot name="trigger">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                <img class="h-8 w-8 rounded-full object-cover" style="width:80%; margin-left:170%; " src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                             </button>
                         @else
                             <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
