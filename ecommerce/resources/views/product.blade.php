@@ -84,6 +84,6 @@
 <p>description:{{$product->description}} </p> 
 <p>color:{{$product->color}} </p> 
 <p>size:{{$product->size}} </p> 
-<p><button>Add to Cart</button></p>
+<a href="{{route('cart.add',$product)}}">Add to Cart</a>
 </div>
 </div>

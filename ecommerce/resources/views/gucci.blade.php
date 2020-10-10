@@ -86,7 +86,7 @@
                                     <h4> <a href="{{route('product.show',$product->id)}}"><div >{{ $product->name}}</div></a></h4>
                                     <p>{{$product->price}}</p>
                                     <p>{{$product->sale_price}}</p>
-                                     <p><button>Add to Cart</button></p>
+                                    <a href="{{route('cart.add',$product)}}">Add to Cart</a>
                                    
             </div>
         @endforeach
