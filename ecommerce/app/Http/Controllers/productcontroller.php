@@ -27,4 +27,22 @@ class productcontroller extends Controller
         $products = product::where('category_id', $id)->get();
         return view('gucci')->with('products',$products);
     }
+    
+    // returns data of products added upto 7 days earlier.
+    function getNewArrivals()
+    {
+        $currentDate = date("Y-m-d H:i:s");
+        $date = strtotime("-7 day");
+        $sevenDaysEarlier = date('Y-m-d H:i:s', $date);
+        $products = product::whereBetween('created_at', [$sevenDaysEarlier, $currentDate])->get();
+        return $products;
+    }
+
+    // A generic function that returns products with prices <= $price passed in the route.
+    // Filters products according to the original price not the sale price.
+    function getPriceFilter($price)
+    {
+        $products = product::whereBetween('price', [0, $price])->get();
+        return $products;
+    }
 }
