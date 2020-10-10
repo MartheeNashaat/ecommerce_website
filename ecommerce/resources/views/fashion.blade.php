@@ -40,6 +40,7 @@
             <ol>
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('product.index')}}">Shop</a></li>
+            <li><a href="{{route('wishlist')}}">wishlist</a></li>
             <li>@if (Route::has('login'))
                 <div>
                     @auth
