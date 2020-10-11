@@ -35,10 +35,10 @@ class SearchController extends Controller
             ->orWhere('price', 'LIKE', '%'.$input.'%')
            
             ->get();
-           dd($joined); 
-          
-
-}
+           //dd($joined); 
+           
+          // return view('welcome')->with('search',$joined);
+          }
 }
 
 ?>

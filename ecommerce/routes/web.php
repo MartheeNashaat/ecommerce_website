@@ -19,6 +19,9 @@ use App\Http\Controllers\CartController;
 Route::get('/', function () {
     return view('fashion');
 })->name('home'); 
+Route::get('/myorders', function () {
+    return view('myorders');
+})->name('orders');
 Route::get('/add-to-cart/{product}', [CartController::class, 'add'])->name('cart.add')->middleware('auth');
 Route::get('/cart',[CartController::class, 'index'] )->name('cart.index')->middleware('auth');
 Route::get('/cart/destroy/{itemId}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy')->middleware('auth');
