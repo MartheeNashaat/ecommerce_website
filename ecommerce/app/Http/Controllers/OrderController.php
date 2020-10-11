@@ -81,12 +81,12 @@ class OrderController extends Controller
         $order->save();
         \Cart::session(auth()->id())->clear();
 
-       /* if (request('payment_method') == 'paypal') {
+        if (request('payment_method') == 'paypal') {
             $order->payment_method = 'paypal';
         }
 
         $order->save();
-
+      /*
         //save order items
 
         $cartItems = \Cart::session(auth()->id())->getContent();
