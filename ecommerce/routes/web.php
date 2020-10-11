@@ -29,6 +29,10 @@ Route::get('/cart/update/{itemId}', 'App\Http\Controllers\CartController@update'
 Route::get('/cart/checkout', 'App\Http\Controllers\CartController@checkout')->name('cart.checkout')->middleware('auth');
 Route::resource('orders', 'App\Http\Controllers\OrderController')->middleware('auth');
 Route::get('/done', 'App\Http\Controllers\CartController@done')->name('done');
+//Route::get('paypal/checkout/{order}', 'App\Http\Controllers\PayPalController@getExpressCheckout')->name('paypal.checkout');
+//Route::get('paypal/checkout-success/{order}', 'App\Http\Controllers\PayPalController@getExpressCheckoutSuccess')->name('paypal.success');
+//Route::get('paypal/checkout-cancel', 'App\Http\Controllers\PayPalController@cancelPage')->name('paypal.cancel');
+
 Route::get('/shop', [productcontroller::class, 'index'])->name('product.index');
 Route::get('/homepage/{product}', [productcontroller::class, 'show'])->name('product.show');
 Route::get('/search',[SearchController::class, 'search'])->name('searchy');

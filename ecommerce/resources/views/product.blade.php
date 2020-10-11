@@ -43,6 +43,7 @@
             <li><a href="{{route('product.index')}}">Shop</a></li>
         
             <li><a href="{{route('wishlist')}}">wishlist</a></li>
+           
 
 
             <li>
