@@ -20,12 +20,23 @@
                     </div>
                     <nav>
                         <ul>
-                            <li><a href=""> Home </a></li>
-                             <li><a href="products.html">Products</a></li>
-                             <li><a href="about.html">About Us</a></li>
-                             <li><a href="Contact.html">Contacts</a></li>
-                             <li><a href="">Account</a></li>
-                        
+                            <li><a href="{{route('home')}}"> Home </a></li>
+                             <li><a href="{{route('product.index')}}">Products</a></li>
+                             <li><a href="{{route('aboutus')}}">About Us</a></li>
+                             <li><a href="{{route('contact')}}">Contacts</a></li>
+                             <li>@if (Route::has('login'))
+                            <div>
+                           @auth
+                           <a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 underline">profile</a>
+                           @else
+                          <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+
+                          @if (Route::has('register'))
+                          <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                          @endif
+                          @endif
+                          </div>
+                          @endif</li>
                         </ul>
                     </nav>
                     <img src="images/cartlogo1.png" alt=""/ width="30px" height="30px">

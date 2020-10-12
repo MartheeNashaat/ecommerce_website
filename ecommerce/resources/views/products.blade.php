@@ -72,7 +72,7 @@
                  <div class="col-4">
                  @foreach($product->images as $productimage)
                  <a href="{{route('product.show',$product->id)}}">
-                <img src={{asset("images/$productimage->image")}} height="500" width="500" alt="product"/></a>
+                <img src={{asset("images/$productimage->image")}} height="auto" width="850" alt="product"/></a>
                      @break
                      @endforeach
                     <div class="rating">
@@ -82,10 +82,14 @@
                      <i class="fa fa-star"></i>
                      <i class="fa fa-star-o"></i>
                      </div>
-                     <button type="button" class="btn btn-outline-danger">{{$product->price}}</button>
-                     <button type="button" class="btn btn-outline-danger">{{$product->sale_price}}</button>
+                     <button type="button" class="btn1 btn-outline-danger">{{$product->price}}EGP</button>
+                     
+                     <button type="button" class="btn btn-outline-danger"><a href="{{route('wishlist.add',$product->id)}}">add to wishlist</a></button>
+                     <button type="button" class="btn btn-outline-danger"><a href="{{route('cart.add',$product)}}">Add to cart</a></button>
+                     
+
                      <a href="{{route('product.show',$product->id)}}"
-                  <h2 id="h2"> Product Details</h2>
+                  
                 </a>
                   </div>  
         

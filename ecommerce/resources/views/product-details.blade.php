@@ -1,4 +1,6 @@
 <DOCTYPE html>
+@extends('layouts.profile-info')
+
     <html lang="en">
    <head>
             <meta charset="utf-8">
@@ -48,6 +50,32 @@
                     </a>
                         </ul>
                     </nav>
+                    
+
+
+
+
+      
+
+
+
+
+                    @section('profile-info')
+                        @endsection 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
                 
             </div>

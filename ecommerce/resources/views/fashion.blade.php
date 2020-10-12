@@ -56,8 +56,10 @@ font-awesome.min.css" >
                 </div>
                 </div>
             </div>
-          
-        
+            <div class="small-container">
+                <br><br><br><br><br><br>
+            <h2 class="title">Available Brands</h2>
+
                 <div class="categories">
                     <div class="small container">
                     <div class="row">
@@ -78,6 +80,8 @@ font-awesome.min.css" >
                         </div>
                     </div>
                 </div>
+                </div>
+
         
                     </div>
             <div class="small-container">
@@ -167,7 +171,7 @@ font-awesome.min.css" >
                 <h2 class="title">UP Coming Brands</h2>
                 <div class="row">
                     <div class="col-5">
-                        <img src="images/productslogo.png" alt="">
+                        <img src="images/guccilogo.png" alt="">
                         
                     </div>
                      <div class="col-5">
