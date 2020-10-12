@@ -1,48 +1,33 @@
-<!DOCTYPE html>
-@extends('layouts.search')
-<html>  
-<head>
-    <title>Egypt Hut</title>
-     <meta charset="utf-8">
-    <link rel="stylesheet" href="<?php echo url('/'); ?>/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/fashion.css">
-    
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/<?php echo url('/'); ?>/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Mountains+of+Christmas|Shadows+Into+Light&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Hanalei|Indie+Flower|Orbitron|Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|PT+Serif&display=swap" rel="stylesheet">
-    
-</head>
-<body>
- 
-  <!-- Logo -->
-       <!--   <div class="flex-shrink-0 flex items-center">
-                    <a href="/">
-                        <x-jet-application-mark class="block h-9 w-auto" />
-                    </a>
-                </div>   --> 
-                
-@section('content')
-        <div class="box1">
-        <ul>
-            <li><a href="">EGP</a>  <i class="fa fa-angle-down" aria-hidden="true"></i></li>
-            <li><a href="">English</a>  <i class="fa fa-angle-down" aria-hidden="true"></i></li>
-            <li><a href="{{ url('/user/profile') }}">My Account</a>  <i class="fa fa-angle-down" aria-hidden="true"></i></li>
-            </ul>
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="<?php echo url('/'); ?>/css/
+fashion.css">
+            <title> Egypt Hut </title>
+            <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;500;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/<?php echo url('/'); ?>/css/
+font-awesome.min.css" >
+        </head>
         
-            <h5> Free shipping on all Egy orders over 1000EGP</h5>
-        </div>
-         
-        <!-- start novbar-->
-        <div class="subbox">
+        <body>
+            <div class="header">
             
-            <ol>
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('product.index')}}">Shop</a></li>
-            <li><a href="{{route('wishlist')}}">wishlist</a></li>
-
-            <li>@if (Route::has('login'))
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                    <a href="{{route('home')}}">
+                        <img src="images/logo.png" alt=""/ width="200px">
+                        </a>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="{{route('home')}}"> Home </a></li>
+                             <li><a href="{{route('product.index')}}">Products</a></li>
+                             <li><a href="{{route('aboutus')}}">About Us</a></li>
+                             <li><a href="{{route('contact')}}">Contacts</a></li>
+                             <li>@if (Route::has('login'))
                 <div>
                     @auth
                         <a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 underline">profile</a>
@@ -55,50 +40,223 @@
                     @endif
                 </div>
             @endif</li>
-            
-            </ol>
-        <!--end novbar-->
-
-        <!--
-           <nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
-            -->
-            
+                        
+                        </ul>
+                    </nav>
+                    <a href="{{ route('cart.index') }}">
+                    <img src="images/cartlogo1.png" alt=""/ width="30px" height="30px">
+                    </a>
+                    <a href="{{ route('wishlist') }}">
+                    <img src="images/wishlist.png" alt=""/ width="40px" height="40px">
+                    </a>
+                </div>
+                 <div class="cover">
+        <img src="images/cover1.png">
+                
+                </div>
+                </div>
+            </div>
           
-        </div>
         
+                <div class="categories">
+                    <div class="small container">
+                    <div class="row">
+                        <div class="col-3">
+                        <a href="{{route('product.brand','Armani Exchange')}}">
+                            <img src="images/armaniilogo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-3">
+                        <a href="{{route('product.brand','Tommy Hilfiger')}}">
+                            <img src="images/tommyylogo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-3">
+                        <a href="{{route('product.brand','Calvin Klein')}}">   
+                            <img src="images/ckklogo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
         
-        
-        
-        <div class="image22">
-        <a href="{{route('product.brand','Tommy Hilfiger')}}">
-        <img src="<?php echo url('/'); ?>/images/tommy.jpg" height="300" width="300" >
-        </a>
-        
-        </div>
-        <div class="image23">
-        <a href="{{route('product.brand','Armani Exchange')}}">
-        <img src="<?php echo url('/'); ?>/images/armanilogo.jpg" height="300" width="300">
-        </a>
-        </div>
-        
-        <div class="image24">
-        <a href="{{route('product.brand','Calvin Klein')}}">   
-        <img src="<?php echo url('/'); ?>/images/Calvin-Klein-01.jpg" height="300" width="300">
-        </a>
-        </div>
+                    </div>
+            <div class="small-container">
+                <h2 class="title">Featured Products</h2>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/fpckwatch.jpg" alt="">
+                        <h4>CK Watch for men</h4>
+                        <p>5000 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/fpbag.png" alt="">
+                        <h4>Armani Exchange Blue Bag</h4>
+                        <p>3500 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/fpsneakers.png" alt="">
+                        <h4>Tommy Hilfiger High neck sneakers </h4>
+                        <p>3000 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/fpwatch.png" alt="">
+                        <h4>tommy Hilfiger Watch for women</h4>
+                        <p>4500 EGP</p>
+                    </div>
+                </div>
+                <h2 class="title">Latest Products</h2>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/lphoodie.png" alt="">
+                        <h4>tommy hilfiger white hoodie</h4>
+                        <p>800 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/lpjacket.png" alt="">
+                        <h4>Armani Exchange black jacket</h4>
+                        <p>1200 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/lpjeans.png" alt="">
+                        <h4>CK Blue Jeans </h4>
+                        <p>1200 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/lptshirt.png" alt="">
+                        <h4>Ck T-shirt</h4>
+                        <p>600 EGP</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/lpsweatshirt.png" alt="">
+                        <h4>CK pink Swearshirt</h4>
+                        <p>750 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/lptommy.png" alt="">
+                        <h4>Tommy Hilfiger white Jacket</h4>
+                        <p>1200 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/jj.png" alt="">
+                        <h4>CK Blue jacket </h4>
+                        <p>1200 EGP</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/armanijacket.png" alt="">
+                        <h4>Armani Exchange Black Jacket</h4>
+                        <p>3500 EGP</p>
+                    </div>
+                </div>
                 
+            
+                    
+            <div class="offer">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="images/offerpic.png" alt="" class="offer-img">
+                    </div>
+                    
+                    <h1>Exclusively Available <br>Raymond Weil Watch</h1>
+                    <a href="#" class="btn">Buy Now &#8594;</a>
+                </div>
+                </div>
+                <div class="brands">
+                    <div class="small-container">
+                <h2 class="title">UP Coming Brands</h2>
+                <div class="row">
+                    <div class="col-5">
+                        <img src="images/productslogo.png" alt="">
+                        
+                    </div>
+                     <div class="col-5">
+                        <img src="images/nike.png" alt="">
+                        
+                    </div>
+                    <div class="col-5">
+                        <img src="images/Guess-Emblem.png" alt="">
+                        
+                    </div>
+                    <div class="col-5">
+                        <img src="images/Planet-Express-Michael-Kors-logo.png" alt="">
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+               
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col-1">
+                            <h3>Download Our App</h3>
+                            <p>Download EgyptHut App for IOS and Android mobile phone</p>
+                            <div class="app-logo">
+                                <img src="images/applogo1.png" alt="">
+                                 <img src="images/applogo2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="footer-col-2">
+                            <img src="images/logo.png" alt="">
+                            <p>our purpose is to provide the customer with authentic Designer products</p> 
+                        </div>
+                        <div class="footer-col-3">
+                            <h3>Useful links</h3>
+                            <ul>
+                                <li>coupons</li>
+                                <li>return policy</li>
+                                <li>Blog Post</li>
+                                
+                            </ul>
+                        </div>
+                        <div class="footer-col-4">
+                            <h3>Follow Us</h3>
+                            <ul>
+                                <li>Facebook</li>
+                                <li>Twitter</li>
+                                <li>Instagram</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="copyright">copyright &copy; 2020 www.EgyptHut.com</p>
+                </div>
+            </div>
+    
                 
-    <!--start footer-->
-     <footer class="footer">
-             copyRights &copy; EgyptHut
-    </footer>
-  <!--end footer-->
-  @endsection      
-      
-</body>
-</html>
+        </body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</DOCTYPE>

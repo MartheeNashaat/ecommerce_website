@@ -25,8 +25,17 @@ Route::get('/myorders', function () {
     return view('myorders');
 })->name('orders');
 
+Route::get('/aboutus', function () {
+    return view('about');
+})->name('aboutus'); 
+
+Route::get('/contact', function () {
+    return view('Contact');
+})->name('contact'); 
+
 Route::get('/shop/{product}/add', [wishlistcontroller::class, 'addwishlist'])->name('wishlist.add')->middleware('auth');;
 Route::get('/wishlist', [wishlistcontroller::class, 'index'])->name('wishlist')->middleware('auth');; 
+Route::get('/wishlist/{product}/remove', [wishlistcontroller::class, 'removeproduct'])->name('wishlist.remove')->middleware('auth');; 
 
 Route::get('/add-to-cart/{product}', [CartController::class, 'add'])->name('cart.add')->middleware('auth');
 Route::get('/cart',[CartController::class, 'index'] )->name('cart.index')->middleware('auth');

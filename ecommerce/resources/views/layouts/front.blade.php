@@ -3,7 +3,7 @@
  <title>Egypt Hut</title>
      <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo url('/'); ?>/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/gucci.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/products.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/<?php echo url('/'); ?>/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
