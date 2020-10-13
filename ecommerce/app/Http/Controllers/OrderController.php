@@ -78,17 +78,20 @@ class OrderController extends Controller
         $order->item_count = \Cart::session(auth()->id())->getContent()->count();
 
         $order->user_id = auth()->id();
-        $order->save();
-        \Cart::session(auth()->id())->clear();
+       
+        
 
-        if (request('payment_method') == 'paypal') {
-            $order->payment_method = 'paypal';
+        if (request('payment_method') == 'CreditCard') {
+            $order->payment_method = 'CreditCard';
+            
+
         }
+        
 
         $order->save();
-      /*
-        //save order items
 
+        //save order items
+/*
         $cartItems = \Cart::session(auth()->id())->getContent();
 
         foreach($cartItems as $item) {
@@ -104,6 +107,7 @@ class OrderController extends Controller
         //send email to customer
 
            */
+          \Cart::session(auth()->id())->clear();
         return redirect()->route('done');
 
     }
@@ -153,3 +157,4 @@ class OrderController extends Controller
         //
     }
 }
+

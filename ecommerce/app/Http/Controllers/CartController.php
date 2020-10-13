@@ -15,9 +15,14 @@ class CartController extends Controller
         \Cart::session(auth()->id())->add(array(
             'id' => $product->id,
             'name' => $product->name,
+<<<<<<< Updated upstream
             'price' => $product->sale_price,
+=======
+            'price'=>$product->sale_price,
+>>>>>>> Stashed changes
             'quantity' => 1,
             'attributes' => array(),
+            'Image'=>$product->images,
             'associatedModel' => $product
         ));
 
