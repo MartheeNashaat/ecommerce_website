@@ -18,7 +18,9 @@ font-awesome.min.css" >
             <div class="container">
                 <div class="navbar">
                     <div class="logo">
-                        <img src="<?php echo url('/'); ?>/images/logo.png" alt=""/ width="200px">
+                        <a href="{{route('home')}}">
+                        <img src="images/logo.png" alt=""/ width="200px">
+                        </a>
                     </div>
                     <nav>
                     <ul>
