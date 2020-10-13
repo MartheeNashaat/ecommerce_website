@@ -39,10 +39,10 @@ class productcontroller extends Controller
     }
 
     // A generic function that returns products with prices <= $price passed in the route.
-    // Filters products according to the original price not the sale price.
+    // Filters products according to the sale price not the original price.
     function getPriceFilter($price)
     {
-        $products = product::whereBetween('price', [0, $price])->get();
-        return view('products')->with('products',$products);
+        $products = product::whereBetween('sale_price', [0, $price])->get();
+        return $products;
     }
 }
