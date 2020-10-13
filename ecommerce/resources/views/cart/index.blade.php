@@ -86,7 +86,7 @@
                                     <a href="{{route('product.show',$item->id)}}">
                                     @foreach($item->associatedModel->images as $productimage)
                                     <a href="{{route('product.show',$item->id)}}">
-                                    <img src="{{ URL::to('/images/' . $productimage->image) }}" width=30px height=auto /></a>
+                                    <img src="{{ URL::to('/images/' . $productimage->image) }}" width=10px height=auto /></a>
                                     @break
                                 @endforeach 
                                   <p> {{$item->name}}</p>
